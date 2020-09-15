@@ -1,16 +1,10 @@
-exports.seed = function (knex, Promise) {
-  // we want to remove all data before seeding
-  // truncate will reset the primary key each time
-  return knex("users")
-    .truncate()
-    .then(function () {
-      // add data into insert
-      return knex("users").insert([
-        {
-          username: "superuser",
-          email: "superuser@testing.com",
-          password: "pass",
-        },
-      ]);
-    });
+exports.seed = function (knex) {
+  // add data into insert
+  return knex("users").insert([
+    {
+      username: "superuser",
+      email: "superuser@testing.com",
+      password: "pass",
+    },
+  ]);
 };
